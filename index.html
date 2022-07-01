@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Library</title>
 </head>
 <body>
@@ -12,24 +13,29 @@
     <div id="container">
         <button id="add-book-btn">add book</button>
 
-        <form id="new-book-form" action="http://httpbin.org/post" method="post">
-            <label for="title">*Title:</label>
-            <input type="text" id="title" name="title" maxlength="120" required>
+        <div id="library-display"></div>
 
-            <label for="author">*Author:</label>
-            <input type="author" id="author" name="author" maxlength="120" required>
+        <div id="modal" style="display:none">
+            <form id="new-book-form">
+                <label for="title">*Title:</label>
+                <input type="text" id="title" name="title" maxlength="120" required>
 
-            <label for="pages">*Number of pages:</label>
-            <input type="number" id="pages" name="pages" min="1" max="10000" required>
+                <label for="author">*Author:</label>
+                <input type="author" id="author" name="author" maxlength="120" required>
 
-            <label for="isRead">Read?</label>
-            <input type="checkbox" id="isRead" name="isRead">
+                <label for="pages">*Number of pages:</label>
+                <input type="number" id="pages" name="pages" min="1" max="10000" required>
 
-            <button id="submit-book">Submit</button>
-        </form> 
+                <label for="isRead">Read?</label>
+                <input type="checkbox" id="isRead" name="isRead">
+
+                <button id="submit-btn">Submit</button>
+            </form> 
+        </div>
 
     </div>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>    
 <script src="script.js" charset="utf-8"></script>
 </body>
 </html>
