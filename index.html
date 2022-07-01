@@ -8,27 +8,28 @@
     <title>Library</title>
 </head>
 <body>
+
     <div id="container">
-        <button id="new-book-btn">Add New Book</button>
-        <form id="new-book-form" style="display: none;">
-            <label for="title">Book title:</label><br>
-            <input type="text" id="title" name="title"><br>
+        <button id="add-book-btn">add book</button>
 
-            <label for="author">Author:</label><br>
-            <input type="text" id="author" name="author"><br>
+        <form id="new-book-form" action="http://httpbin.org/post" method="post">
+            <label for="title">*Title:</label>
+            <input type="text" id="title" name="title" maxlength="120" required>
 
-            <label for="pages">Number of pages:</label><br>
-            <input type="text" id="pages" name="pages"><br>
+            <label for="author">*Author:</label>
+            <input type="author" id="author" name="author" maxlength="120" required>
 
-            <label for="have-read">Has been read:</label><br>
-            <input type="radio" id="has-read" name="have-read">
-            <label for="has-read">Yes</label>
-            <input type="radio" id="has-not-read" name="have-read">
-            <label for="has-not-read">No</label>
-            
-        </form>
+            <label for="pages">*Number of pages:</label>
+            <input type="number" id="pages" name="pages" min="1" max="10000" required>
 
-    </div> 
+            <label for="isRead">Read?</label>
+            <input type="checkbox" id="isRead" name="isRead">
+
+            <button id="submit-book">Submit</button>
+        </form> 
+
+    </div>
+    
 <script src="script.js" charset="utf-8"></script>
 </body>
 </html>
