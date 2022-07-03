@@ -4,6 +4,7 @@ const modal = document.getElementById('modal');
 const newBookForm = document.getElementById('new-book-form');
 const libraryDisplay = document.getElementById('library-display');
 const SubmitBtn = document.getElementById('submit-btn');
+const removeBtns = document.getElementsByClassName('removeBtn');
 
 
 //Data Structures
@@ -24,6 +25,8 @@ class Book {
 //Event Listeners
 addBookBtn.addEventListener('click', displayForm);
 SubmitBtn.addEventListener('click', addBookToLibrary);
+// TODO: add remove fn
+// removeBtns.forEach(addEventListener('click', this.parent.remove()));
 
 
 function displayForm() {
@@ -34,6 +37,8 @@ function createBookCard(book, i) {
     const card = document.createElement('div');
     card.setAttribute('data-index', i);
     const removeBtn = document.createElement('button');
+    removeBtn.classList.add('removeBtn');
+    removeBtn.classList.add('btn');
     const title = document.createElement('h1');
     const author = document.createElement('p');
     const pages = document.createElement('p');
@@ -74,7 +79,8 @@ function createBookObj() {
     return new Book(title, author, pages, isRead);
 }
 
-function addBookToLibrary() {
+function addBookToLibrary(e) {
+    e.preventDefault();
    //create new book obj
     const newBook = createBookObj();
 
